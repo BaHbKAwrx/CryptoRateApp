@@ -13,6 +13,11 @@
 		62A9DD13222EB059008AE00B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62A9DD12222EB059008AE00B /* Assets.xcassets */; };
 		62A9DD16222EB059008AE00B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62A9DD14222EB059008AE00B /* LaunchScreen.storyboard */; };
 		62A9DD1E222EB3C3008AE00B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 62A9DD1D222EB3C3008AE00B /* .gitignore */; };
+		62A9DD20222EE584008AE00B /* CurrectCryptoRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A9DD1F222EE584008AE00B /* CurrectCryptoRate.swift */; };
+		62A9DD22222EE5AB008AE00B /* CryptoIconManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A9DD21222EE5AB008AE00B /* CryptoIconManager.swift */; };
+		62A9DD25222EE793008AE00B /* ErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A9DD24222EE792008AE00B /* ErrorManager.swift */; };
+		62A9DD27222EE800008AE00B /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A9DD26222EE800008AE00B /* APIManager.swift */; };
+		62A9DD29222EE844008AE00B /* APICryptoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A9DD28222EE844008AE00B /* APICryptoManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		62A9DD15222EB059008AE00B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		62A9DD17222EB059008AE00B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		62A9DD1D222EB3C3008AE00B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		62A9DD1F222EE584008AE00B /* CurrectCryptoRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrectCryptoRate.swift; sourceTree = "<group>"; };
+		62A9DD21222EE5AB008AE00B /* CryptoIconManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoIconManager.swift; sourceTree = "<group>"; };
+		62A9DD24222EE792008AE00B /* ErrorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorManager.swift; sourceTree = "<group>"; };
+		62A9DD26222EE800008AE00B /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		62A9DD28222EE844008AE00B /* APICryptoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICryptoManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +68,26 @@
 			isa = PBXGroup;
 			children = (
 				62A9DD0B222EB056008AE00B /* AppDelegate.swift */,
+				62A9DD24222EE792008AE00B /* ErrorManager.swift */,
+				62A9DD26222EE800008AE00B /* APIManager.swift */,
+				62A9DD28222EE844008AE00B /* APICryptoManager.swift */,
 				62A9DD0D222EB056008AE00B /* ViewController.swift */,
+				62A9DD23222EE5C0008AE00B /* CryptoRate Model */,
 				62A9DD0F222EB056008AE00B /* Main.storyboard */,
 				62A9DD12222EB059008AE00B /* Assets.xcassets */,
 				62A9DD14222EB059008AE00B /* LaunchScreen.storyboard */,
 				62A9DD17222EB059008AE00B /* Info.plist */,
 			);
 			path = CryptoRateApp;
+			sourceTree = "<group>";
+		};
+		62A9DD23222EE5C0008AE00B /* CryptoRate Model */ = {
+			isa = PBXGroup;
+			children = (
+				62A9DD1F222EE584008AE00B /* CurrectCryptoRate.swift */,
+				62A9DD21222EE5AB008AE00B /* CryptoIconManager.swift */,
+			);
+			path = "CryptoRate Model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,8 +162,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62A9DD29222EE844008AE00B /* APICryptoManager.swift in Sources */,
+				62A9DD27222EE800008AE00B /* APIManager.swift in Sources */,
 				62A9DD0E222EB056008AE00B /* ViewController.swift in Sources */,
+				62A9DD20222EE584008AE00B /* CurrectCryptoRate.swift in Sources */,
 				62A9DD0C222EB056008AE00B /* AppDelegate.swift in Sources */,
+				62A9DD22222EE5AB008AE00B /* CryptoIconManager.swift in Sources */,
+				62A9DD25222EE793008AE00B /* ErrorManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
