@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +15,106 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CryptoRateApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Main bg" translatesAutoresizingMaskIntoConstraints="NO" id="fme-AR-Yg8">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bg rect" translatesAutoresizingMaskIntoConstraints="NO" id="HRM-jG-twu">
+                                <rect key="frame" x="16" y="36" width="343" height="595"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="uAf-Ty-75D">
+                                <rect key="frame" x="24.5" y="58.5" width="326" height="550"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="D8L-98-uMq">
+                                        <rect key="frame" x="52.5" y="0.0" width="221" height="29"/>
+                                        <segments>
+                                            <segment title="Bitcoin"/>
+                                            <segment title="Ethereum"/>
+                                            <segment title="Litecoin"/>
+                                        </segments>
+                                        <color key="tintColor" red="0.96078431372549022" green="0.74509803921568629" blue="0.396078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </segmentedControl>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BTC image" translatesAutoresizingMaskIntoConstraints="NO" id="3Ay-QZ-R28">
+                                        <rect key="frame" x="101" y="53" width="124" height="124"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eDO-Im-HB2">
+                                        <rect key="frame" x="137.5" y="202" width="51" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="eDO-Im-HB2" secondAttribute="height" multiplier="51:50" id="c0R-SJ-bAl"/>
+                                        </constraints>
+                                        <state key="normal" image="Star"/>
+                                    </button>
+                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fgk-wP-BSs">
+                                        <rect key="frame" x="0.0" y="277" width="326" height="90"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="8"/>
+                                        <state key="normal" title="3567.89$" backgroundImage="Price rect">
+                                            <color key="titleColor" red="0.99135298391905602" green="1" blue="0.98160867349082936" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="19B-o7-WQz">
+                                        <rect key="frame" x="18" y="392" width="290" height="29"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-5.192$" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="9ie-nr-hmA">
+                                                <rect key="frame" x="0.0" y="0.0" width="137" height="29"/>
+                                                <color key="backgroundColor" red="0.93547368049621582" green="0.44108439416155387" blue="0.36461223509033458" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                                <color key="textColor" red="0.9706538114974399" green="1" blue="0.96363235163907246" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-0.02%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="Odb-ea-d1V">
+                                                <rect key="frame" x="153" y="0.0" width="137" height="29"/>
+                                                <color key="backgroundColor" red="0.93547368049621582" green="0.44108439416155387" blue="0.36461223509033458" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                                <color key="textColor" red="0.9706538114974399" green="1" blue="0.96363235163907246" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A1x-7y-Dqs">
+                                        <rect key="frame" x="111" y="446" width="104" height="104"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="A1x-7y-Dqs" secondAttribute="height" multiplier="1:1" id="bwz-gf-UeO"/>
+                                        </constraints>
+                                        <state key="normal" image="Bitcoin refresh"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="fme-AR-Yg8" secondAttribute="bottom" id="1sP-26-kFj"/>
+                            <constraint firstItem="uAf-Ty-75D" firstAttribute="height" secondItem="HRM-jG-twu" secondAttribute="height" multiplier="0.924" id="2uH-OD-xrn"/>
+                            <constraint firstItem="fme-AR-Yg8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="2zu-nG-Gvc"/>
+                            <constraint firstAttribute="trailing" secondItem="fme-AR-Yg8" secondAttribute="trailing" id="52m-Ym-Gly"/>
+                            <constraint firstItem="HRM-jG-twu" firstAttribute="height" secondItem="fme-AR-Yg8" secondAttribute="height" multiplier="0.892" id="Fqh-nq-3VC"/>
+                            <constraint firstItem="fme-AR-Yg8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Jj5-JV-oyc"/>
+                            <constraint firstItem="uAf-Ty-75D" firstAttribute="centerX" secondItem="HRM-jG-twu" secondAttribute="centerX" id="Kg7-3a-UiN"/>
+                            <constraint firstItem="9ie-nr-hmA" firstAttribute="width" secondItem="HRM-jG-twu" secondAttribute="width" multiplier="0.4" id="LeD-CZ-DwQ"/>
+                            <constraint firstItem="HRM-jG-twu" firstAttribute="centerX" secondItem="fme-AR-Yg8" secondAttribute="centerX" id="cAn-Nq-8pR"/>
+                            <constraint firstItem="HRM-jG-twu" firstAttribute="centerY" secondItem="fme-AR-Yg8" secondAttribute="centerY" id="hRT-kA-w2s"/>
+                            <constraint firstItem="uAf-Ty-75D" firstAttribute="centerY" secondItem="HRM-jG-twu" secondAttribute="centerY" id="ogs-7t-RrK"/>
+                            <constraint firstItem="HRM-jG-twu" firstAttribute="width" secondItem="fme-AR-Yg8" secondAttribute="width" multiplier="0.914666" id="qVw-ac-aMX"/>
+                            <constraint firstItem="uAf-Ty-75D" firstAttribute="width" secondItem="HRM-jG-twu" secondAttribute="width" multiplier="0.95" id="yG6-0C-9T5"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="118.29085457271366"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="BTC image" width="124" height="124"/>
+        <image name="Bg rect" width="333" height="603"/>
+        <image name="Bitcoin refresh" width="104" height="104"/>
+        <image name="Main bg" width="375" height="667"/>
+        <image name="Price rect" width="326" height="90"/>
+        <image name="Star" width="51" height="50"/>
+    </resources>
 </document>
