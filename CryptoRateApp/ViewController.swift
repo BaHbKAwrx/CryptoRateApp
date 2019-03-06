@@ -21,6 +21,7 @@ class ViewController: UIViewController {
     
     lazy var cryptoManager = APICryptoManager(apiKey: "api")
     var currencies = Currencies(input: "BTC", output: "USD")
+    let userDef = UserDefaults.standard
     
     //MARK: - VC Lifecycle
     override func viewDidLoad() {
@@ -51,6 +52,9 @@ class ViewController: UIViewController {
         rateChangePercentLabel.text = "-"
         rateChangeDollarsLabel.backgroundColor = .clear
         rateChangePercentLabel.backgroundColor = .clear
+        if userDef.integer(forKey: "Favourite") == currencySegmControl.selectedSegmentIndex {
+            isFavouriteButton.setImage(UIImage(named: "Selected star"), for: .normal)
+        }
         
     }
     
@@ -113,6 +117,12 @@ class ViewController: UIViewController {
     //MARK: - Button actions
     @IBAction func segmControlValueChanged(_ sender: UISegmentedControl) {
         
+        if sender.selectedSegmentIndex == userDef.integer(forKey: "Favourite") {
+            isFavouriteButton.setImage(UIImage(named: "Selected star"), for: .normal)
+        } else {
+            isFavouriteButton.setImage(UIImage(named: "Star"), for: .normal)
+        }
+        
         switch sender.selectedSegmentIndex {
         case 0:
             currencies = Currencies(input: "BTC", output: "USD")
@@ -133,6 +143,10 @@ class ViewController: UIViewController {
     }
     
     @IBAction func starButtonPushed(_ sender: UIButton) {
+        
+        userDef.set(currencySegmControl.selectedSegmentIndex, forKey: "Favourite")
+        sender.setImage(UIImage(named: "Selected star"), for: .normal)
+        
     }
     
     @IBAction func refreshButtonPushed(_ sender: UIButton) {
