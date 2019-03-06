@@ -67,7 +67,7 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-5.192$" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="9ie-nr-hmA">
                                                 <rect key="frame" x="0.0" y="0.0" width="137" height="29"/>
-                                                <color key="backgroundColor" red="0.93547368049621582" green="0.44108439416155387" blue="0.36461223509033458" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" red="0.93725490196078431" green="0.4392156862745098" blue="0.36470588235294116" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                                 <color key="textColor" red="0.9706538114974399" green="1" blue="0.96363235163907246" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>

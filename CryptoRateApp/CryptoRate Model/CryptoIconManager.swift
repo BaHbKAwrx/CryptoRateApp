@@ -17,9 +17,9 @@ enum CryptoIconManager: String {
     
     init(rawValue: String) {
         switch rawValue {
-        case "BTC image": self = .BTC
-        case "ETH shadow": self = .ETH
-        case "LTC shadow": self = .LTC
+        case "BTC": self = .BTC
+        case "ETH": self = .ETH
+        case "LTC": self = .LTC
         default: self = .BTC
         }
     }

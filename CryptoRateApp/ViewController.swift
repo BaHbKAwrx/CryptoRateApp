@@ -28,6 +28,8 @@ class ViewController: UIViewController {
         
         makeRateChangeRounded()
         
+        settingRateDefaultValues()
+        
         getCurrentRateData()
         
     }
@@ -39,6 +41,16 @@ class ViewController: UIViewController {
         rateChangeDollarsLabel.clipsToBounds = true
         rateChangePercentLabel.layer.cornerRadius = 10
         rateChangePercentLabel.clipsToBounds = true
+        
+    }
+    
+    func settingRateDefaultValues() {
+        
+        currentRateButton.setTitle("-", for: .normal)
+        rateChangeDollarsLabel.text = "-"
+        rateChangePercentLabel.text = "-"
+        rateChangeDollarsLabel.backgroundColor = .clear
+        rateChangePercentLabel.backgroundColor = .clear
         
     }
     
@@ -62,8 +74,39 @@ class ViewController: UIViewController {
     
     func updateUIWith(currentRate: CurrentCryptoRate) {
         
-        self.currentRateButton.setTitle(currentRate.priceString, for: .normal)
-        self.rateChangeDollarsLabel.text = currentRate.changeString
+        let priceStringRounded = makeStringRounded(string: currentRate.price, signsAfterDot: 2)
+        let changeStringRounded = makeStringRounded(string: currentRate.change, signsAfterDot: 3)
+        let changePercentString = "\(Double(changeStringRounded)! / Double(priceStringRounded)! * 100)"
+        let changePercentStringRounded = makeStringRounded(string: changePercentString, signsAfterDot: 2)
+        
+        //Changing rect colors depend from change up or down
+        if changeStringRounded.hasPrefix("-") {
+            self.rateChangeDollarsLabel.backgroundColor = #colorLiteral(red: 0.937254902, green: 0.4392156863, blue: 0.3647058824, alpha: 1)
+        } else {
+            self.rateChangeDollarsLabel.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
+        }
+        
+        if changePercentStringRounded.hasPrefix("-") {
+            self.rateChangePercentLabel.backgroundColor = #colorLiteral(red: 0.937254902, green: 0.4392156863, blue: 0.3647058824, alpha: 1)
+        } else {
+            self.rateChangePercentLabel.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
+        }
+        
+        self.currencyImageView.image = currentRate.base
+        self.currentRateButton.setTitle(priceStringRounded + "$", for: .normal)
+        self.rateChangeDollarsLabel.text = changeStringRounded + "$"
+        self.rateChangePercentLabel.text = changePercentStringRounded + "%"
+        
+    }
+    
+    func makeStringRounded(string: String, signsAfterDot signs: Int) -> String {
+        
+        let stringArr = string.components(separatedBy: ".")
+        let index = stringArr[1].index(stringArr[1].startIndex, offsetBy: signs)
+        let firstPart = stringArr[0]
+        let secondPart = String(stringArr[1].prefix(upTo: index))
+        let stringRounded = firstPart + "." + secondPart
+        return stringRounded
         
     }
 
@@ -75,6 +118,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func refreshButtonPushed(_ sender: UIButton) {
+        
+        getCurrentRateData()
+        
     }
     
 }
