@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var rateChangePercentLabel: UILabel!
     
     lazy var cryptoManager = APICryptoManager(apiKey: "api")
-    let currencies = Currencies(input: "BTC", output: "USD")
+    var currencies = Currencies(input: "BTC", output: "USD")
     
     //MARK: - VC Lifecycle
     override func viewDidLoad() {
@@ -112,6 +112,24 @@ class ViewController: UIViewController {
 
     //MARK: - Button actions
     @IBAction func segmControlValueChanged(_ sender: UISegmentedControl) {
+        
+        switch sender.selectedSegmentIndex {
+        case 0:
+            currencies = Currencies(input: "BTC", output: "USD")
+            refreshRateButton.setImage(UIImage(named: "Bitcoin refresh"), for: .normal)
+            getCurrentRateData()
+        case 1:
+            currencies = Currencies(input: "ETH", output: "USD")
+            refreshRateButton.setImage(UIImage(named: "Eth refresh"), for: .normal)
+            getCurrentRateData()
+        case 2:
+            currencies = Currencies(input: "LTC", output: "USD")
+            refreshRateButton.setImage(UIImage(named: "Litecoin refresh"), for: .normal)
+            getCurrentRateData()
+        default:
+            break
+        }
+        
     }
     
     @IBAction func starButtonPushed(_ sender: UIButton) {
